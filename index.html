@@ -1,0 +1,372 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+    </script>
+     <script src="jquery.fancybox.js"></script>
+     <script src-"jquery.mousewheel-3.0.6.pack.js"></script>
+  <script src="jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="jquery.jrumble.1.3.js"></script>
+  <link rel="stylesheet" type="text/css" href="jquery.fancybox.css"/>
+	<style type="text/css" media="screen">
+	body{
+		/*background:url('http://s.ytimg.com/yt/imgbin/www-refreshbg-vflC3wnbM.png');*/
+		background-color:rgba(255,255,255,0.9);
+		width:100%;
+		height:100%;
+		min-width:1200px;
+		font-family: Arial, "MS Trebuchet", sans-serif;
+
+	}
+	#wrapper{
+		width:80%;
+		background:transparent;
+		border-radius:8px;
+
+	}
+	#ipad{
+		background-image:url('ipad.gif');
+		background-repeat:no-repeat;
+		height:100%;
+		margin-left:10%;
+
+	}
+	
+	#approw1{
+		padding-top:3%;
+		padding-left:10%;
+		float:left;
+		
+
+
+	}
+	#approw2{
+		float:left;
+		padding-top:3%;
+		padding-left:18%;
+
+	}
+	.eros, .angryfam, .sherlock, .cheaptourist, .death, .rhyme, .kite{
+		margin:20px;
+		cursor: pointer;
+	}
+	
+	
+	h1{
+		text-align: center;
+	}
+	#footer{
+		position: absolute;
+		bottom:10px;
+		float:left;
+	}
+	
+	p{
+		font-size:20px;
+	}
+	#time{
+		padding-top:50px;
+	}
+	input[type="text"]{
+		background-color:rgba(0,0,0,0.8);
+		width:80%;
+		height:25px;
+		border:none;
+		float:left;
+		margin-left:50px;
+		text-align: center;
+		color:white;
+	}
+	#eros{
+		background-image:url('http://images1.wikia.nocookie.net/__cb20110916232527/callofduty/images/archive/8/8f/20120121054955!Red-heart.png');
+		background-repeat:no-repeat;
+		background-position:center;
+	}
+	img:hover{
+		width:110;
+		height:110;
+	}
+	#music{
+		float:left;
+		margin-right:10%;
+		margin-bottom:50%;
+
+	}
+	#music li{
+		list-style-type:none;
+		background-color:rgba(0,0,0,0.2);
+		color:white;
+		padding:5px;
+		margin-right:10%;
+
+	}
+	#music li:hover{
+		color:grey;
+		background-color:rgba(150,0,120,0.3);
+		cursor: pointer;
+		color:rgba('1,2,3,0.1');
+	}
+	#stop:hover{
+		cursor: pointer;
+		width:50px;
+		height:50px;
+
+	}
+	#music #title1{
+		background-color:black;
+		color:white;
+		cursor: default;
+		border-radius:25px 0 0 0;
+	}
+	.selected{
+		font-style:italic;
+	}
+	#playing{
+		background-color:rgba(0,0,0,0.3);
+		float:left;
+		width:80%;
+		height:25px;
+		margin-left:50px;
+		margin-top:8px;
+
+	}
+	#playing marquee{
+		color:white;
+		font-size:15px;
+		text-align: center;
+	}
+	#controls{
+		cursor: pointer;
+		text-decoration: underline;
+		position: absolute;
+		left:10px;
+		top:10px;
+		background-color:rgba(5,10,20,0.3);
+		border-radius:10px;
+		padding:10px;
+
+	}
+	#controls #one{
+		color:blue;
+	}
+	#controls #two{
+		color:red;
+	}
+	</style>
+	<title>Ipad- Afnan Yousuf</title>
+</head>
+<body onload="clock()">
+	<center>
+<div id="wrapper"> 
+	<div id="ipad">
+		<div id="time">
+		<input type="text" name="text1" id="thetime" readonly="readonly">
+	</div>
+	<script type="text/javascript">
+	function clock() {
+
+cDate = new Date(); //get date
+cHours = cDate.getHours(); //get hours
+cMinutes = cDate.getMinutes(); //get minutes
+cSeconds = cDate.getSeconds(); //get seconds
+semi = " : "
+var time="PM";
+if(cHours<12){time="AM"} // if the hours are  less than 12, its am
+if(cMinutes<10){cMinutes="0" + cMinutes;}
+if(cHours<=0){ cHours=1;}
+var name="English Summative";
+if(cSeconds<5){name="HI MRS BURNETT";}
+document.getElementById('thetime').value = cHours-12 + semi + cMinutes + semi + cSeconds + " " + time + 
+"                                   " + name;//write out the time 
+setTimeout("clock()", 1000);
+
+}
+</script>
+
+
+		<div id="approw1">
+		<img src="transparenteros.png" class="eros" width="100" height="100" id="app">
+		<img src="sherlock.png" class="sherlock" width="100" height="100" id="app2">
+		<img src="angryfam2.png" class="angryfam" width="100" height="100" id="app3">
+		<img src="cheaptourist.png" class="cheaptourist" width="100" height="100" id="app4">
+	</div>
+	<div id="approw2">
+		<img src="death.png" class="death" width="100" height="100" id="app5">
+		<img src="rhyme.png" class="rhyme" width="100" height="100" id="app6">
+		<img src="kites.png" class="kite" width="100" height="100" id="app7">
+	</div>
+	<div id="playing">
+		<marquee behavior="scroll" direction="right" id="song">Now Playing: Nothing!</marquee>
+	</div>
+	</div>
+</div>
+<div id="hidden" style="display:none">
+<div id="eros">
+	<h1> Eros In A Pocket </h1>
+	<h2><u>How Does It Work?</u></h2>
+	<p>Are you ever lost when it comes to love? Do you hate waking up to that empty spot beside you in bed everyday? Do YOU want to find that special someone? Well then this app is for you! Through rigorous trial and error, scientists at LoveFinder Inc. have finally made a product that will change the face of this industry. We have engineered the power of Eros, all into the palm of your hands! Why wait for the arrow to hit you, when you can stick in yourself? Stop waiting for your romeo, he's already waiting for you! Be honest with yourself. You're lonely, sad and are slowly getting fat. This app can change every EVERYTHING. Get it now for a special release price of only 99 cents!
+	</p>
+	<h2><u>Why This App?</u></h2>
+	<p>I chose this app because it ties into Greek mythology and <u>Romeo and Juliet</u>. The two connect by sharing a common theme of love. The Greek god Eros was the god of love so this app is based off Eros. In Romeo and Juliet they were in love so in a way they were struck by Eros. So this app tells you, you can find your love (such as romeo did with Juliet) but in real life. The app also says they are sad without it, which we see in Romeo and Juliet, that when they are not together they are sad. The theme of love is also related to our poetry unit because throughout time, one of the most effective ways to use poetry was to express one's love to another. This app also relates with the "fate" concept in Romeo and Juliet. When this app is used, it finds the soul mate that is written in "the stars" for the person. </p>
+</div>
+<div id="sherlock">
+	<h1>Sherlock Holmes: Maycomb Stories</h1>
+	<h2><u>How Does It Work?</u></h2>
+	<p>You slowly open your eyes to find not two feet away from you, a girl and a boy are being 
+	attacked by an elder man. The man is intoxicated and seems to have the intention to hurt the children.You must get up and help them! You're stuck! You watch from a distance as the man wrestles around with the children. You try harder and harder to get up, but you have lost all feeling of your body! You see a man come up from behind and stab the other man from behind. You are not sure if you should be relieved or terrified. You see the man run away with the children and your vision fades away again. You wake up again a little while later and start to remember why you're here.You accidentally traveled to the wrong period in time! But now you feel obliged to go back in time and prevent that attack from happening. You must go back again and find out how to prevent the attack!</p>
+	<h2><u>Why This App?</u></h2>
+	<p>This app connects with the story <u>To Kill A Mockingbird</u>. The app teaches the user about the events leading up to the end of the novel. It goes through Tom Robinson's case and critically analyzes the relationship with Boo and the children. In the book we have the perspective of Scout but this app makes it so we get the perspective of Sherlock Holmes. The tone and mood of the story would become very different and show the user why the book was in Scout's narrative voice. </p>
+</div>
+<div id="angryfam">
+	<h1>Angry Families</h1>
+	<h2><u>How Does It Work?</u></h2>
+	<p>
+		From the developers of Angry Birds comes the new series, Angry Families! Play with the famous families, Capulets and Montagues! Try to resolve their problems and create a peaceful environment between the two families. Play with different characters from the two families! Every character gives a new and interesting experience! Are you frequently under stress? A bad relationship? Loads of works? Well this app can relieve stress too! When you see the pointless battle between the two families, you'll love your life! Enjoy everlasting fun and a better life, get it now!
+	</p>
+		<h2><u>Why This App?</u></h2>
+		<p>
+			This app displays relationship that the two families had in <u>Romeo and Juliet</u>. In the prologue the first line is "two households, both alike in dignity", but then as the play goes on we see the irony because the two families fight like children. The player has to restore the peace in the game and we see that in the real story the way that it happened was through the death of their children. 
+
+
+
+		</p>
+</div>
+<div id="cheaptourist">
+	<h1>Cheap Tourist</h1>
+	<h2><u>How Does It Work?</u></h2>
+	<p> 
+		“ Do your vacations suck? Do you end up spending thousands, just to have a bad time? Well say no more, leave your next destination with no regrets! Cheap Tourist allows you to travel to great places such as, Verona, Rome and even to Alabama if you wish! Want to go to Afghanistan? We’ll set it up! Go see the great rap legend Tupac in Cuba! Our prices are extremely cheap and welcome tourists of all ages! We provide first class services and loads of fun! There is no limit to where you can go!* 
+
+	</p>
+
+<h2><u>Why This App?</u></h2>
+		<p>
+		This app is about the setting of most of the units in our english class. Italy is for Romeo and Juliet, the south is for To Kill A Mockingbird and also Rome is for mythology. The setting for each of these novels is important to understanding each of them. Also I have chosen Cuba for the poetry unit, because there is a conspiracy theory that Tupac is still alive and resides in Cuba. This app allows the user to understand why the story's setting was, what it was.
+
+		</p>
+
+</div>
+<div id="death">
+	<h1>Death Teller</h1>
+		<h2><u>How Does It Work?</u></h2>
+	<p> 
+		“ Ever wondered when you're going to die? Constantly living your life in fear? Well STOP! You can live your life to the fullest with this new app! Death Teller uses the power of science and witchcraft to bring you the exact moment and day you will die! It will no longer be a surprise and life will be that much more enjoyable to you! Everybody's DYING for this app, be the first of your friends to own it!
+	</p>
+
+<h2><u>Why This App?</u></h2>
+		<p>
+		Almost all of the units we had completed through the year had some sort of death related concept or death as a theme. In mythology, To Kill A Mockingbird, and in Romeo and Juliet as well as my ISU book (the Kite Runner).
+
+		</p>
+</div>
+<div id="rhyme">
+	<h1>Rhymasaurous</h1>
+</div>
+<div id="kite">
+	<h1>Build A Kite</h1>
+</div>
+</div>
+</center>
+<script type="text/javascript">
+ $(".eros").click(function() {
+        $.fancybox.open('#eros');
+      });
+  $(".sherlock").click(function() {
+        $.fancybox.open('#sherlock');
+      });
+  $(".angryfam").click(function() {
+        $.fancybox.open('#angryfam');
+      });
+$(".cheaptourist").click(function() {
+        $.fancybox.open('#cheaptourist');
+      });
+$(".death").click(function() {
+        $.fancybox.open('#death');
+      });
+$(".rhyme").click(function() {
+        $.fancybox.open('#rhyme');
+      });
+$(".kite").click(function() {
+        $.fancybox.open('#kite');
+      });
+
+
+
+ 
+$('#app, #app2, #app3, #app4, #app5, #app6, #app7').jrumble();
+$('#app, #app2, #app3, #app4, #app5, #app6, #app7').trigger('startRumble');
+$('#app, #app2, #app3, #app4, #app5, #app6, #app7').trigger('stopRumble');
+$('#app, #app2, #app3, #app4, #app5, #app6, #app7').jrumble({
+	speed: 50,
+});
+$('#app, #app2, #app3, #app4, #app5, #app6, #app7').hover(function(){
+	$(this).trigger('startRumble');
+}, function(){
+	$(this).trigger('stopRumble');
+});
+	
+</script>
+<div id="controls">
+	<span id="one"> Hide Player <a>/</a> </span>
+<span id="two"> Show Player</span>
+</div>
+<div id="footer">
+	<div id="music">
+		<audio id="player" autoplay="autoplay"></audio>
+<li id="title1"> Music </li>
+<ul id="playlist"><li data-ogg="dearmama.ogg">Tupac- Dear Mama</li><li data-ogg="beamin.theora.ogv">Lupe Fiasco - I'm Beaming</li><li data-ogg="dreams.ogg">Hoodie Allen - Dreams Up</li>
+<li data-ogg="headup.ogv">Tupac- Keep Ya Head Up</li>
+</ul>
+<center>
+ <img src="http://findicons.com/files//icons/2338/reflection/128/button_pause.png" id="stop" width="50" height="50">
+</center>
+
+</div>
+</div>
+
+<script type="text/javascript">
+$("#one").click(function () {      
+	$("#footer").slideUp();
+
+	 });
+$("#two").click(function(){
+	$("#footer").slideDown();
+});
+</script>
+<script type="text/javascript">
+
+var _player = document.getElementById("player"),
+    _playlist = document.getElementById("playlist"),
+    _stop = document.getElementById("stop");
+
+
+function playlistItemClick(clickedElement) {
+    var selected = _playlist.querySelector(".selected");
+    if (selected) {
+        selected.classList.remove("selected");
+    }
+    clickedElement.classList.add("selected");
+    document.getElementById('song').innerHTML="Now Playing: " + clickedElement.innerHTML;
+    _player.src = clickedElement.getAttribute("data-ogg");
+    _player.play();
+}
+
+function playNext() {
+    var selected = _playlist.querySelector("li.selected");
+    if (selected && selected.nextSibling) {
+        playlistItemClick(selected.nextSibling);
+    }
+}
+
+_stop.addEventListener("click", function () {
+    _player.pause();
+     document.getElementById('song').innerHTML="Stopped! (Psst! Pick A Song!)";
+});
+_player.addEventListener("ended", playNext);
+_playlist.addEventListener("click", function (e) {
+    if (e.target && e.target.nodeName === "LI") {
+        playlistItemClick(e.target);
+    }
+});
+</script>
+</body>
+</html>
